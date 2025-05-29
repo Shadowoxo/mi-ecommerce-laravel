@@ -11,11 +11,8 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
 
-Route::get('/', [HomeController::class, 'index']);
-// Página de bienvenida
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+// Ruta principal única, usando HomeController
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Rutas de la tienda pública
 Route::get('/productos', [ProductController::class, 'index'])->name('productos.index');
